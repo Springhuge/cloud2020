@@ -24,10 +24,24 @@ public class CommonResult<T> {
         this.message = resultCode.getMessage();
     }
 
+    public CommonResult(ResultCode resultCode,String message){
+        this.success = resultCode.getSuccess();
+        this.code = resultCode.getCode();
+        this.message = resultCode.getMessage()+message;
+    }
+
     public CommonResult(ResultCode resultCode,T data){
         this.success = resultCode.getSuccess();
         this.code = resultCode.getCode();
         this.message = resultCode.getMessage();
         this.data = data;
     }
+
+    public CommonResult(ResultCode resultCode,T data,String message){
+        this.success = resultCode.getSuccess();
+        this.code = resultCode.getCode();
+        this.message = resultCode.getMessage()+message;
+        this.data = data;
+    }
+
 }
